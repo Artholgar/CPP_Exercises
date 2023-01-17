@@ -2,10 +2,10 @@
 
 int main()
 {
+    auto str = "";
     while (true)
     {
-        std::cout << "This is a translator, but it does nothing for now..." << std::endl;
-        std::cin.ignore();
+        std::cin >>
     }
 
     return 0;
