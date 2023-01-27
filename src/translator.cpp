@@ -79,6 +79,13 @@ int main()
 
             cout << endl;
         }
+        else if (command == "print")
+        {
+            for (auto trans : table)
+            {
+                cout << trans.first << " => " << trans.second << endl;
+            }
+        }
     }
 
     return 0;
