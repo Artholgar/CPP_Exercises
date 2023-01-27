@@ -52,21 +52,32 @@ int main()
 
             string line = "";
 
-            getline(cin, line);
+            // delet the first space and append a final space.
+            line.erase(0, 1);
+            line.append(" ");
 
             cout << line << endl;
 
-            for (auto w : line)
+            int start = 0;
+            int end = line.find(" ", start);
+            while (end != -1)
             {
+                auto w = line.substr(start, end - start);
+
                 if (table.count(w) == 1)
                 {
-                    cout << table.at(w) << endl;
+                    cout << table.at(w) << " ";
                 }
                 else
                 {
-                    cout << "???" << endl;
+                    cout << "??? ";
                 }
+
+                start = end + 1;
+                end = line.find(" ", start);
             }
+
+            cout << endl;
         }
     }
 
