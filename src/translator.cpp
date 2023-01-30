@@ -25,6 +25,12 @@ void add_history(vector<pair<string, string>> &history, const string &w1, const 
     history.emplace_back(w1, w2);
 }
 
+void clear_line(istream &stream)
+{
+    string line;
+    getline(stream, line);
+}
+
 void add_command(const string &w1, const string &w2, unordered_map<string, string> &table, vector<pair<string, string>> &history)
 {
     if (w1.empty() || w2.empty())
@@ -39,16 +45,8 @@ void add_command(const string &w1, const string &w2, unordered_map<string, strin
     cout << w1 << " => " << w2 << endl;
 }
 
-void translate_command(unordered_map<string, string> &table)
+void translate_command(string line, unordered_map<string, string> &table)
 {
-    string line = "";
-
-    // delet the first space and append a final space.
-    line.erase(0, 1);
-    line.append(" ");
-
-    cout << line << endl;
-
     int start = 0;
     int end = line.find(" ", start);
     while (end != -1)
@@ -127,6 +125,30 @@ void load_command(unordered_map<string, string> &table, vector<pair<string, stri
     }
 }
 
+void clear_command(unordered_map<string, string> &table, vector<pair<string, string>> &history)
+{
+    for (auto it = history.end(); it != history.begin(); it--)
+    {
+        history.erase(it);
+    }
+    table.clear();
+}
+
+void remove_command(const string &word, unordered_map<string, string> &table, vector<pair<string, string>> &history)
+{
+    for (auto it = history.begin(); it != history.end(); it++)
+    {
+        auto command = *it;
+
+        if (command.first == word)
+        {
+            history.erase(it);
+            break;
+        }
+    }
+    table.erase(word);
+}
+
 int compute_commands(unordered_map<string, string> &table, const unordered_set<string> &exit_commands, vector<pair<string, string>> &history)
 {
     string command = "";
@@ -145,29 +167,54 @@ int compute_commands(unordered_map<string, string> &table, const unordered_set<s
         cin >> w2;
 
         add_command(w1, w2, table, history);
+        clear_line(cin);
     }
     else if (command == "translate")
     {
-        translate_command(table);
+        string line = "";
+        getline(cin, line);
+
+        // delet the first space and append a final space.
+        line.erase(0, 1);
+        line.append(" ");
+
+        translate_command(line, table);
     }
     else if (command == "print")
     {
         print_command(table);
+        clear_line(cin);
     }
     else if (command == "save")
     {
         save_command(history);
+        clear_line(cin);
     }
     else if (command == "load")
+
     {
         load_command(table, history);
+        clear_line(cin);
+    }
+    else if (command == "clear")
+    {
+        clear_command(table, history);
+        clear_line(cin);
+    }
+    else if (command == "remove")
+    {
+        string w1;
+        cin >> w1;
+
+        remove_command(w1, table, history);
+        clear_line(cin);
     }
     else
     {
-        string line;
-        getline(cin, line);
         cout << "Unable to compute command" << endl;
+        clear_line(cin);
     }
+
     return 1;
 }
 
