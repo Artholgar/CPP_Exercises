@@ -7,6 +7,15 @@
 
 using namespace std;
 
+using languages = pair<string, string>;
+using dictionary = unordered_map<string, string>;
+using history = vector<pair<string, string>>;
+
+void usage()
+{
+    cout << "Program expect 2 arguments : source language and target language" << endl;
+}
+
 void make_exit_commands(unordered_set<string> &exit_commands)
 {
     exit_commands.emplace("e");
@@ -15,12 +24,12 @@ void make_exit_commands(unordered_set<string> &exit_commands)
     exit_commands.emplace("quit");
 }
 
-void add_translation(unordered_map<string, string> &table, const string &w1, const string &w2)
+void add_translation(dictionary &table, const string &w1, const string &w2)
 {
     table.emplace(w1, w2);
 }
 
-void add_history(vector<pair<string, string>> &history, const string &w1, const string &w2)
+void add_history(history &history, const string &w1, const string &w2)
 {
     history.emplace_back(w1, w2);
 }
@@ -31,7 +40,7 @@ void clear_line(istream &stream)
     getline(stream, line);
 }
 
-void add_command(const string &w1, const string &w2, unordered_map<string, string> &table, vector<pair<string, string>> &history)
+void add_command(const string &w1, const string &w2, dictionary &table, history &history)
 {
     if (w1.empty() || w2.empty())
     {
@@ -45,7 +54,7 @@ void add_command(const string &w1, const string &w2, unordered_map<string, strin
     cout << w1 << " => " << w2 << endl;
 }
 
-void translate_command(string line, unordered_map<string, string> &table)
+void translate_command(string line, dictionary &table)
 {
     int start = 0;
     int end = line.find(" ", start);
@@ -68,7 +77,7 @@ void translate_command(string line, unordered_map<string, string> &table)
     cout << endl;
 }
 
-void print_command(unordered_map<string, string> &table)
+void print_command(dictionary &table)
 {
     for (auto trans : table)
     {
@@ -76,7 +85,7 @@ void print_command(unordered_map<string, string> &table)
     }
 }
 
-void save_command(const vector<pair<string, string>> &history)
+void save_command(const history &history)
 {
     string name = "";
 
@@ -99,7 +108,7 @@ void save_command(const vector<pair<string, string>> &history)
     }
 }
 
-void load_command(unordered_map<string, string> &table, vector<pair<string, string>> &history)
+void load_command(dictionary &table, history &history)
 {
     string name = "";
 
@@ -125,7 +134,7 @@ void load_command(unordered_map<string, string> &table, vector<pair<string, stri
     }
 }
 
-void clear_command(unordered_map<string, string> &table, vector<pair<string, string>> &history)
+void clear_command(dictionary &table, history &history)
 {
     for (auto it = history.end(); it != history.begin(); it--)
     {
@@ -134,7 +143,7 @@ void clear_command(unordered_map<string, string> &table, vector<pair<string, str
     table.clear();
 }
 
-void remove_command(const string &word, unordered_map<string, string> &table, vector<pair<string, string>> &history)
+void remove_command(const string &word, dictionary &table, history &history)
 {
     for (auto it = history.begin(); it != history.end(); it++)
     {
@@ -149,7 +158,7 @@ void remove_command(const string &word, unordered_map<string, string> &table, ve
     table.erase(word);
 }
 
-int compute_commands(unordered_map<string, string> &table, const unordered_set<string> &exit_commands, vector<pair<string, string>> &history)
+int compute_commands(dictionary &table, const unordered_set<string> &exit_commands, history &history)
 {
     string command = "";
     cin >> command;
@@ -218,11 +227,29 @@ int compute_commands(unordered_map<string, string> &table, const unordered_set<s
     return 1;
 }
 
-int main()
+int main(int argc, char **argv)
 {
+    if (argc > 3)
+    {
+        usage();
+        return 1;
+    }
+
+    string source = "fr";
+    string target = "en";
+
+    if (argc == 3)
+    {
+        source = argv[1];
+        target = argv[2];
+    }
+
     unordered_set<string> exit_commands;
     make_exit_commands(exit_commands);
 
+    unordered_map<string, dictionary> tables;
+
+    tables.emplace(source + " " + target, dictionary{});
     unordered_map<string, string> table;
 
     vector<pair<string, string>> history;
