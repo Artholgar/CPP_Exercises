@@ -4,7 +4,7 @@ using namespace std;
 
 int Pokemon::_next_id = 0;
 
-Pokemon::Pokemon(string name) : _id{_next_id}, _name{name} { _next_id++; }
+Pokemon::Pokemon(string name) : _id{_next_id++}, _name{name} {}
 
 Pokemon::Pokemon(const Pokemon &other) : Pokemon{other._name} {}
 
