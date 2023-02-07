@@ -1,8 +1,11 @@
 #pragma once
 
+#include "Plush.hpp"
+
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -47,20 +50,52 @@ public:
 
     int make_plush(int price)
     {
-        // int cost = max(_wealth_amount - (_wealth_amount - price), 0);
-
         int cost = price + min(_wealth_amount - price, 0);
 
         if (cost == 0)
         {
             return 0;
         }
-        cout << cost << endl;
+
         _wealth_amount -= cost;
 
         _stock_size += 1;
         _experience += 1;
-        return cost + max(_experience, _experience * cost / 100);
+
+        int total_cost = cost + max(_experience, _experience * cost / 100);
+
+        _plush_stock.emplace_back(total_cost);
+
+        return total_cost;
+    }
+
+    optional<Plush> buy(int money)
+    {
+        auto it = _plush_stock.begin();
+
+        auto cheapest = *it;
+        auto it_cheapest = it;
+
+        for (; it != _plush_stock.end(); ++it)
+        {
+            auto current = *it;
+            if (cheapest.get_cost() > current.get_cost())
+            {
+                cheapest = current;
+                it_cheapest = it;
+            }
+        }
+
+        if (money < cheapest.get_cost())
+        {
+            return optional<Plush>{};
+        }
+
+        _plush_stock.erase(it_cheapest);
+        _stock_size -= 1;
+        _wealth_amount += cheapest.get_cost();
+
+        return optional<Plush>{cheapest};
     }
 
 private:
@@ -69,4 +104,5 @@ private:
     unsigned int _stock_size = 0;
     unsigned int _debt_amount = 0;
     unsigned int _experience = 0;
+    vector<Plush> _plush_stock{};
 };
