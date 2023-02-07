@@ -2,7 +2,12 @@
 
 using namespace std;
 
-vector<Pokemon> PC::pokemons()
+const vector<unique_ptr<Pokemon>> &PC::pokemons()
 {
-    return vector<Pokemon>{};
+    return _pokemons;
+}
+
+void PC::transfer(std::unique_ptr<Pokemon> pokemon)
+{
+    _pokemons.emplace_back(move(pokemon));
 }
