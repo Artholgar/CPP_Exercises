@@ -2,8 +2,10 @@
 
 #include "Pokemon.h"
 
-#include <vector>
+#include <algorithm>
 #include <memory>
+#include <string>
+#include <vector>
 
 class Trainer;
 
@@ -11,11 +13,20 @@ class Trainer;
 // When a Pokemon is transferred to the PC, this one takes ownership.
 class PC
 {
-    /* public:
-        const std::vector<PokemonPtr> &pokemons();
+public:
+    std::vector<PokemonPtr> &pokemons()
+    {
+        return _pokemons;
+    }
 
-        void transfer(PokemonPtr pokemon);
+    void transfer(PokemonPtr pokemon)
+    {
+        if (pokemon != nullptr)
+        {
+            _pokemons.push_back(std::move(pokemon));
+        }
+    }
 
-    private:
-        std::vector<PokemonPtr> _pokemons; */
+private:
+    std::vector<PokemonPtr> _pokemons;
 };

@@ -9,21 +9,41 @@ class Trainer;
 class Pokemon
 {
 public:
-    Pokemon(const std::string &name);
+    Pokemon(const std::string &name)
+        : _name{name}, _id{next_id++}
+    {
+    }
 
-    Pokemon(const Pokemon &other);
+    Pokemon(const Pokemon &other)
+        : _name{other._name}, _id{next_id++}
+    {
+    }
 
-    Pokemon &operator=(const Pokemon &other);
+    Pokemon &operator=(const Pokemon &other)
+    {
+        if (this != &other)
+        {
+            _name = other._name;
+        }
 
-    int id() const;
+        return *this;
+    }
 
-    std::string name() const;
+    const std::string &name() const
+    {
+        return _name;
+    }
+
+    int id() const
+    {
+        return _id;
+    }
 
 private:
-    static int _next_id;
+    static inline int next_id = 0;
 
-    const int _id = 0;
     std::string _name;
+    int _id = 0;
 };
 
 using PokemonPtr = std::unique_ptr<Pokemon>;
