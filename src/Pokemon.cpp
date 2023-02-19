@@ -2,9 +2,9 @@
 
 using namespace std;
 
-int Pokemon::_next_id = 0;
+inline int Pokemon::_next_id = 0;
 
-Pokemon::Pokemon(string name) : _id{_next_id++}, _name{name} {}
+Pokemon::Pokemon(const string &name) : _id{_next_id++}, _name{name} {}
 
 Pokemon::Pokemon(const Pokemon &other) : Pokemon{other._name} {}
 
