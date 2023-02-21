@@ -11,6 +11,10 @@ public:
         : _data { data }
     {}
 
+    static NodePtr make_ptr(std::string data) {
+        return std::make_unique<StringLeaf>(data);
+    }
+
     NodeKind kind() const { return NodeKind::STRING; }
 
     std::string print() const override
