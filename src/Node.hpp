@@ -6,7 +6,8 @@
 
 enum class NodeKind
 {
-    INT
+    INT,
+    STRING
 };
 
 class Node : public InstanceCounter

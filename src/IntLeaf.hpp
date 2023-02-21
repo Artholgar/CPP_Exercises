@@ -15,7 +15,7 @@ public:
 
     std::string print() const override { return std::to_string(_data); }
 
-    int data() { return _data; }
+    int data() const { return _data; }
 
 private:
     int _data;
