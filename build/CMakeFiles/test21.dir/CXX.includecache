@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/ArrayNode.cpp
+ArrayNode.hpp
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/ArrayNode.hpp
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/ArrayNode.hpp
+Node.hpp
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/Node.hpp
+memory
+-
+string
+-
+vector
+-
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/InstanceCounter.hpp
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/Node.hpp
+InstanceCounter.hpp
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/InstanceCounter.hpp
+NodeKind.hpp
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/NodeKind.hpp
+memory
+-
+string
+-
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/NodeKind.hpp
+iostream
+-
+

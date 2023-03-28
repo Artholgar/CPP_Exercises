@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/kitchen.dir/src/Main.cpp.o CMakeFiles/kitchen.dir/src/Kitchen.cpp.o -o kitchen/kitchen  extern/Catch2/src/libCatch2d.a 

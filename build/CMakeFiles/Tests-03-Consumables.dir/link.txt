@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Tests-03-Consumables.dir/tests/Tests-03-Consumables.cpp.o CMakeFiles/Tests-03-Consumables.dir/src/Kitchen.cpp.o -o Tests-03-Consumables  extern/Catch2/src/libCatch2Maind.a extern/Catch2/src/libCatch2d.a 

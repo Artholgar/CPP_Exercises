@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Tests-04-Cupboard.dir/tests/Tests-04-Cupboard.cpp.o CMakeFiles/Tests-04-Cupboard.dir/src/Kitchen.cpp.o -o Tests-04-Cupboard  extern/Catch2/src/libCatch2Maind.a extern/Catch2/src/libCatch2d.a 

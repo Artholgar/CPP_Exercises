@@ -1,0 +1,36 @@
+test01-node-and-leaf 16 3.62642
+test02-int-leaf 11 3.82839
+test03-string-leaf 10 4.35541
+test04-array-node 8 4.3579
+test05-object-node 7 5.02048
+test10-make-ptr 4 5.21043
+test11-array-push-back 2 3.64623
+test12-object-insert 0 0
+test13-object-dico 2 4.62413
+test20-height-and-nodecount 0 0
+test21-parse-leaf 0 0
+test22-parse-array 0 0
+test23-parse-object 0 0
+test24-parse-pokedex 0 0
+test30-as-intleaf 0 0
+test31-as-stringleaf 0 0
+test32-as-arraynode 0 0
+test33-as-objectnode 0 0
+test34-navigation-object 0 0
+test35-modification 0 0
+test36-iterator-array 0 0
+test37-navigation-full 0 0
+test38-navigation-full-const 0 0
+test40-equality 0 0
+test41-deep-copy 0 0
+Tests-01-Units 0 0
+Tests-02-Ingredients 0 0
+Tests-03-Consumables 0 0
+Tests-04-Cupboard 0 0
+Tests-05-Recipes 0 0
+---
+Tests-03-Consumables
+Tests-02-Ingredients
+Tests-05-Recipes
+Tests-04-Cupboard
+Tests-01-Units

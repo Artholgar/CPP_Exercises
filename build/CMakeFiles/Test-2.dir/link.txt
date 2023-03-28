@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Test-2.dir/tests/Test-2.cpp.o -o Test-2  extern/Catch2/src/libCatch2Maind.a extern/Catch2/src/libCatch2d.a 

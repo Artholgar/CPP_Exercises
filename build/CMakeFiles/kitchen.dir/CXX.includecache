@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/lib/Unit.hpp
+string
+-
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/Kitchen.cpp
+Kitchen.hpp
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/Kitchen.hpp
+
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/src/Kitchen.hpp
+../lib/Unit.hpp
+/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/lib/Unit.hpp
+algorithm
+-
+set
+-
+string
+-
+vector
+-
+utility
+-
+

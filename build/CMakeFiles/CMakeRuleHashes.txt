@@ -1,0 +1,6 @@
+# Hashes of file build rules.
+67a035908716e72bfdfc8f04209bc547 CMakeFiles/zrun-Tests-01-Units
+855e7369fa89c767cf6025e2c8cceea4 CMakeFiles/zrun-Tests-02-Ingredients
+5d09786bdb95cba50189394b6204b361 CMakeFiles/zrun-Tests-03-Consumables
+5d9033c0b10a836c47ea24ebbacfa2c5 CMakeFiles/zrun-Tests-04-Cupboard
+c0fb7e7436adf2263a2908bec1ffc5bd CMakeFiles/zrun-Tests-05-Recipes

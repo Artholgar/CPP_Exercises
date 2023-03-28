@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Tests-01-Units.dir/tests/Tests-01-Units.cpp.o CMakeFiles/Tests-01-Units.dir/src/Kitchen.cpp.o -o Tests-01-Units  extern/Catch2/src/libCatch2Maind.a extern/Catch2/src/libCatch2d.a 

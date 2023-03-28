@@ -1,0 +1,214 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				},
+				{
+					"build" : "extern/Catch2",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "extern/Catch2"
+				},
+				{
+					"build" : "extern/Catch2/src",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "extern/Catch2/src",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CPP_Exercices",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "Catch2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Catch2::@e03d30b9ee5e091ccb8b",
+					"jsonFile" : "target-Catch2-Debug-3d1f54ab57d0a7b6a0f1.json",
+					"name" : "Catch2",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Catch2WithMain::@e03d30b9ee5e091ccb8b",
+					"jsonFile" : "target-Catch2WithMain-Debug-01b5afd04ccefa8e7817.json",
+					"name" : "Catch2WithMain",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tests-01-Units::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tests-01-Units-Debug-d089b2c683a5e465acb6.json",
+					"name" : "Tests-01-Units",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tests-02-Ingredients::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tests-02-Ingredients-Debug-3033497a684e51d6189b.json",
+					"name" : "Tests-02-Ingredients",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tests-03-Consumables::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tests-03-Consumables-Debug-f6c03ff3c2c9cc16d9f0.json",
+					"name" : "Tests-03-Consumables",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tests-04-Cupboard::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tests-04-Cupboard-Debug-379850e5087d9cb162d6.json",
+					"name" : "Tests-04-Cupboard",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tests-05-Recipes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tests-05-Recipes-Debug-8657eaa47c87fd830973.json",
+					"name" : "Tests-05-Recipes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kitchen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kitchen-Debug-2633de6cb75dac81e29c.json",
+					"name" : "kitchen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zrun-Tests-01-Units::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zrun-Tests-01-Units-Debug-a8b5c61337372bdf487e.json",
+					"name" : "zrun-Tests-01-Units",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zrun-Tests-02-Ingredients::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zrun-Tests-02-Ingredients-Debug-c7c2cc945d3eade5a1d6.json",
+					"name" : "zrun-Tests-02-Ingredients",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zrun-Tests-03-Consumables::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zrun-Tests-03-Consumables-Debug-555f6768f889aea6476b.json",
+					"name" : "zrun-Tests-03-Consumables",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zrun-Tests-04-Cupboard::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zrun-Tests-04-Cupboard-Debug-f2c53647207bdaa6196e.json",
+					"name" : "zrun-Tests-04-Cupboard",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zrun-Tests-05-Recipes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zrun-Tests-05-Recipes-Debug-1bbfb115b6e92faadf2c.json",
+					"name" : "zrun-Tests-05-Recipes",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises/build",
+		"source" : "/home/2inf1/arthur.pairaud/Documents/C++/CPP_Exercises"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}
